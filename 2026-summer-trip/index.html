@@ -19,12 +19,15 @@
     .card h3 { margin:0 0 6px; font-size:16px; }
     .card a { color:var(--accent); text-decoration:none; }
     .card a:hover { text-decoration:underline; }
-    .pill { display:inline-block; padding:2px 8px; background:#0b1220; border:1px solid #1f2937; border-radius:999px; font-size:12px; color:var(--muted); }
+    .pill { display:inline-block; padding:2px 8px; background:#0b1220; border:1px solid #1f2937; border-radius:999px; font-size:12px; color:var(--muted); margin:2px; }
     .notes { width:100%; min-height:80px; background:#0b1220; border:1px solid #1f2937; color:var(--text); border-radius:10px; padding:10px; }
     ul { margin:8px 0 0 18px; }
     .day { padding:8px 0; border-bottom:1px dashed #1f2937; }
     .day:last-child { border-bottom:none; }
     .highlight { color:var(--accent2); }
+    .imgs { display:flex; gap:8px; margin:8px 0; }
+    .imgs img { width:48%; height:120px; object-fit:cover; border-radius:8px; }
+    .rating { font-size:13px; color:var(--muted); margin:4px 0; }
   </style>
 </head>
 <body>
@@ -41,7 +44,7 @@
         <li>One beach-focused stay + one masseria stay.</li>
         <li>Value‑sensitive 4+ star properties.</li>
       </ul>
-      <p class="sub">Use the notes boxes below for Laura’s comments.</p>
+      <p class="sub">Use the notes boxes below for Laura's comments.</p>
     </section>
 
     <section class="section">
@@ -50,15 +53,25 @@
         <div class="card">
           <h3>JR Hotels Grande Albergo delle Nazioni</h3>
           <div class="pill">Bari</div>
-          <p><a href="https://jr-hotels.com/it/collection/jr-hotels-grande-albergo-delle-nazioni-bari" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/jr-hotels-bari-puglia-storia-1.jpg" alt="JR Hotels exterior">
+            <img src="assets/jr-hotels-bari-puglia-storia-2.jpg" alt="JR Hotels room">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.1/5 | Google: 4.5/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g187874-d3370749-Reviews-Jr_Hotels_Grande_Albergo_delle_Nazioni_Bari-Bari_Province_of_Bari_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://jr-hotels.com/it/collection/jr-hotels-grande-albergo-delle-nazioni-bari" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Palazzo Calò</h3>
           <div class="pill">Bari</div>
-          <p><a href="https://www.palazzocalo.com/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/palazzo-calo-esselle-1.jpg" alt="Palazzo Calò exterior">
+            <img src="assets/palazzo-calo-esselle-16-680x1024.jpg" alt="Palazzo Calò interior">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.2/5 | Google: 4.2/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g187874-d3723945-Reviews-Palazzo_Calo-Bari_Province_of_Bari_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://www.palazzocalo.com/" target="_blank">Official site</a></p>
         </div>
       </div>
-      <textarea class="notes" placeholder="Laura’s notes for Base 1..."></textarea>
+      <textarea class="notes" placeholder="Laura's notes for Base 1..."></textarea>
     </section>
 
     <section class="section">
@@ -67,47 +80,74 @@
         <div class="card">
           <h3>Baglioni Masseria Muzza</h3>
           <div class="pill">Otranto</div>
-          <p><a href="https://puglia.baglionihotels.com/it" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/spa_baglioni_masseria_muzza_a39a882ec7.jpg" alt="Baglioni spa">
+            <img src="assets/medium_deluxe_suite_baglioni_masseria_muzza_1_d0a8838fbf.jpg" alt="Baglioni suite">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.7/5 | Google: 4.7/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g652004-d10051497-Reviews-Baglioni_Masseria_Muzza_Resort_Spa-Otranto_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://puglia.baglionihotels.com/it" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Masseria Panareo</h3>
           <div class="pill">Otranto</div>
-          <p><a href="https://www.masseriapanareo.com/en/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/DJI_0247-uai-720x720.jpg" alt="Masseria Panareo aerial">
+            <img src="assets/MG_3331_1-uai-720x720.jpg" alt="Masseria Panareo pool">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.5/5 | Google: 4.5/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g652004-d1121778-Reviews-Masseria_Panareo-Otranto_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://www.masseriapanareo.com/en/" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Masseria Furnirussi (Emblems Collection)</h3>
           <div class="pill">Serrano / Otranto area</div>
-          <p><a href="https://www.emblemscollection.com/it/hotel/masseria-furnirussi/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/KEY-VISUAL-1.jpg" alt="Furnirussi exterior">
+            <img src="assets/KEY-VISUAL-3-275x275.jpg" alt="Furnirussi pool">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.5/5 | Google: 4.5/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g1204584-d3324433-Reviews-Furnirussi_Tenuta-Serrano_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://www.emblemscollection.com/it/hotel/masseria-furnirussi/" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Sangiorgio Resort &amp; Spa</h3>
           <div class="pill">Cutrofiano</div>
-          <p><a href="https://www.sangiorgioresort.it/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/sangiorgioresort_spa.jpg" alt="Sangiorgio spa">
+            <img src="assets/sangiorgioresort_camere-1.jpg" alt="Sangiorgio room">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.5/5 | Google: 4.5/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g1084326-d1681895-Reviews-Sangiorgio_Resort_Spa-Cutrofiano_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://www.sangiorgioresort.it/" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Relais Masseria Le Cesine</h3>
           <div class="pill">Vernole</div>
-          <p><a href="https://cdshotels.it/relais-masseria-le-cesine/" target="_blank">Official site</a></p>
+          <div class="rating">⭐ TripAdvisor: 4.6/5 | Google: 4.6/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g652010-d11706737-Reviews-Relais_Masseria_Le_Cesine_CDSHotels-Vernole_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://cdshotels.it/relais-masseria-le-cesine/" target="_blank">Official site</a></p>
         </div>
       </div>
-      <textarea class="notes" placeholder="Laura’s notes for Base 2..."></textarea>
+      <textarea class="notes" placeholder="Laura's notes for Base 2..."></textarea>
     </section>
 
     <section class="section">
-      <h2>Base 3 — Masseria / Valle d’Itria (3 nights)</h2>
+      <h2>Base 3 — Masseria / Valle d'Itria (3 nights)</h2>
       <div class="cards">
         <div class="card">
           <h3>Masseria Torricella</h3>
           <div class="pill">Alberobello area</div>
-          <p><a href="https://www.masseriatorricella.it/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/1.jpg" alt="Torricella exterior">
+            <img src="assets/a1.jpg" alt="Torricella pool">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.4/5 | Google: 4.4/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g580227-d1185625-Reviews-Masseria_Torricella-Alberobello_Province_of_Bari_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://www.masseriatorricella.it/" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Masseria Le Carrube</h3>
           <div class="pill">Ostuni area</div>
-          <p><a href="https://masserialecarrubeostuni.it/" target="_blank">Official site</a></p>
+          <div class="rating">⭐ TripAdvisor: 4.6/5 | Google: 4.6/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g642178-d8596411-Reviews-Masseria_Le_Carrube-Ostuni_Province_of_Brindisi_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://masserialecarrubeostuni.it/" target="_blank">Official site</a></p>
         </div>
       </div>
-      <textarea class="notes" placeholder="Laura’s notes for Base 3..."></textarea>
+      <textarea class="notes" placeholder="Laura's notes for Base 3..."></textarea>
     </section>
 
     <section class="section">
@@ -116,38 +156,58 @@
         <div class="card">
           <h3>Patria Palace Hotel</h3>
           <div class="pill">Top pick</div>
-          <p><a href="https://patriapalace.com/en/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/patria-palace-1.jpg" alt="Patria Palace facade">
+            <img src="assets/patria-palace-logo.png" alt="Patria Palace interior">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.5/5 | Google: 4.5/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g194791-d202936-Reviews-Patria_Palace_Hotel-Lecce_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://patriapalace.com/en/" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Palazzo Zimara Boutique Hotel</h3>
           <div class="pill">Alt</div>
-          <p><a href="https://palazzozimara.it/it/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/palazzo-zimara-1.jpg" alt="Palazzo Zimara exterior">
+            <img src="assets/palazzo-zimara-2.jpeg" alt="Palazzo Zimara details">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.9/5 | Google: 4.9/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g194791-d27950268-Reviews-Palazzo_Zimara_Boutique_Hotel-Lecce_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://palazzozimara.it/it/" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Pollicastro Boutique Hotel</h3>
           <div class="pill">Alt</div>
-          <p><a href="https://www.pollicastroboutiquehotel.com/en/index" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/pollicastro-1.jpg" alt="Pollicastro bedroom">
+            <img src="assets/pollicastro-2.jpeg" alt="Pollicastro facade">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.8/5 | Google: 4.8/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g194791-d21510366-Reviews-Pollicastro_Boutique_Hotel-Lecce_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://www.pollicastroboutiquehotel.com/en/index" target="_blank">Official site</a></p>
         </div>
         <div class="card">
           <h3>Chiostro dei Domenicani</h3>
           <div class="pill">Pool backup</div>
-          <p><a href="https://www.chiostrodeidomenicani.it/" target="_blank">Official site</a></p>
+          <div class="imgs">
+            <img src="assets/chiostro-1.jpg" alt="Chiostro wedding venue">
+            <img src="assets/chiostro-logo.png" alt="Chiostro cloister">
+          </div>
+          <div class="rating">⭐ TripAdvisor: 4.3/5 | Google: 4.6/5</div>
+          <p><a href="https://www.tripadvisor.it/Hotel_Review-g194791-d24986689-Reviews-Chiostro_Dei_Domenicani-Lecce_Province_of_Lecce_Puglia.html" target="_blank">TripAdvisor</a> | <a href="https://www.chiostrodeidomenicani.it/" target="_blank">Official site</a></p>
         </div>
       </div>
-      <textarea class="notes" placeholder="Laura’s notes for Base 4..."></textarea>
+      <textarea class="notes" placeholder="Laura's notes for Base 4..."></textarea>
     </section>
 
     <section class="section">
       <h2>Day‑by‑day (tight draft)</h2>
       <div class="card">
         <div class="day"><strong>Day 1 (Sep 13):</strong> Arrive BRI 19:40 → Bari overnight.</div>
-        <div class="day"><strong>Days 2–5 (Sep 14–17):</strong> Beach base. Otranto coastline, Baia dei Turchi, Torre dell’Orso, or Porto Badisco.</div>
-        <div class="day"><strong>Day 6 (Sep 18):</strong> Drive to Valle d’Itria masseria. Sunset in Ostuni.</div>
+        <div class="day"><strong>Days 2–5 (Sep 14–17):</strong> Beach base. Otranto coastline, Baia dei Turchi, Torre dell'Orso, or Porto Badisco.</div>
+        <div class="day"><strong>Day 6 (Sep 18):</strong> Drive to Valle d'Itria masseria. Sunset in Ostuni.</div>
         <div class="day"><strong>Days 7–8 (Sep 19–20):</strong> Alberobello, Locorotondo, Martina Franca. Easy drives, late dinners.</div>
         <div class="day"><strong>Days 9–10 (Sep 21–22):</strong> Lecce base. Baroque center + one Salento coast day trip (Otranto or Gallipoli).</div>
         <div class="day"><strong>Day 11 (Sep 23):</strong> Morning in Lecce → drive to BRI (~2h) → depart 20:35.</div>
       </div>
-      <textarea class="notes" placeholder="Laura’s notes for itinerary..."></textarea>
+      <textarea class="notes" placeholder="Laura's notes for itinerary..."></textarea>
     </section>
 
     <section class="section">
