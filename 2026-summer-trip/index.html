@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Puglia Itinerary — Sep 12–25, 2026</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#94a3b8; --accent:#38bdf8; --accent2:#22c55e; }
     * { box-sizing: border-box; }
@@ -28,6 +29,10 @@
     .imgs { display:flex; gap:8px; margin:8px 0; }
     .imgs img { width:48%; height:120px; object-fit:cover; border-radius:8px; }
     .rating { font-size:13px; color:var(--muted); margin:4px 0; }
+    #hotel-map { height:500px; border-radius:12px; border:1px solid #1f2937; }
+    .map-legend { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; font-size:13px; }
+    .legend-item { display:flex; align-items:center; gap:6px; }
+    .legend-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; }
   </style>
 </head>
 <body>
@@ -38,6 +43,18 @@
   </header>
 
   <main>
+    <section class="section">
+      <h2>Hotel Locations</h2>
+      <div id="hotel-map"></div>
+      <div class="map-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#38bdf8"></div> Bari</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> Beach Resorts</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div> Valle d'Itria / Masseria</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> Lecce</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#94a3b8"></div> Bari Airport</div>
+      </div>
+    </section>
+
     <section class="section">
       <h2>Summary</h2>
       <ul>
@@ -395,5 +412,73 @@
       </ul>
     </section>
   </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('hotel-map').setView([40.9, 17.1], 8);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    function mkIcon(color) {
+      return L.divIcon({
+        className: '',
+        html: '<div style="width:14px;height:14px;border-radius:50%;background:' + color + ';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.5);"></div>',
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+        popupAnchor: [0, -8]
+      });
+    }
+
+    var bari   = mkIcon('#38bdf8');
+    var beach  = mkIcon('#06b6d4');
+    var valle  = mkIcon('#22c55e');
+    var lecce  = mkIcon('#a78bfa');
+    var airport= mkIcon('#94a3b8');
+
+    // Bari hotels
+    L.marker([41.1248, 16.8656], {icon: bari}).addTo(map).bindPopup('<b>JR Hotels Grande Albergo delle Nazioni</b><br>Bari');
+    L.marker([41.1272, 16.8700], {icon: bari}).addTo(map).bindPopup('<b>Palazzo Calò</b><br>Bari');
+    L.marker([41.0992, 16.8548], {icon: bari}).addTo(map).bindPopup('<b>The Nicolaus Hotel</b><br>Bari');
+    L.marker([41.1162, 16.8685], {icon: bari}).addTo(map).bindPopup('<b>Hotel Excelsior</b><br>Bari');
+    L.marker([41.0950, 16.8626], {icon: bari}).addTo(map).bindPopup('<b>Hi Hotel Bari</b><br>Bari');
+    L.marker([41.0688, 16.9370], {icon: bari}).addTo(map).bindPopup('<b>Barion Hotel &amp; Congressi</b><br>Torre a Mare, Bari');
+    L.marker([41.1048, 16.8639], {icon: bari}).addTo(map).bindPopup('<b>Mercure Villa Romanazzi Carducci</b><br>Bari');
+
+    // Beach Resort hotels
+    L.marker([40.9510, 17.3070], {icon: beach}).addTo(map).bindPopup('<b>La Peschiera</b><br>Capitolo, Monopoli');
+    L.marker([40.9236, 17.2764], {icon: beach}).addTo(map).bindPopup('<b>Il Melograno</b><br>Monopoli');
+    L.marker([40.9555, 17.3003], {icon: beach}).addTo(map).bindPopup('<b>Hotel Don Ferrante</b><br>Monopoli');
+    L.marker([40.8338, 17.3605], {icon: beach}).addTo(map).bindPopup('<b>Masseria Torre Maizza</b><br>Savelletri di Fasano');
+    L.marker([40.8408, 17.3974], {icon: beach}).addTo(map).bindPopup('<b>Canne Bianche Lifestyle Hotel</b><br>Torre Canne, Fasano');
+    L.marker([40.7750, 17.5055], {icon: beach}).addTo(map).bindPopup('<b>Sole In Me Resort</b><br>Costa Merlata, Ostuni');
+
+    // Valle d'Itria / Masseria hotels
+    L.marker([40.8296, 17.2381], {icon: valle}).addTo(map).bindPopup('<b>Masseria Torricella</b><br>Alberobello');
+    L.marker([40.7245, 17.5640], {icon: valle}).addTo(map).bindPopup('<b>Masseria Le Carrube</b><br>Ostuni');
+    L.marker([40.7343, 17.5780], {icon: valle}).addTo(map).bindPopup('<b>La Sommità Relais</b><br>Ostuni');
+    L.marker([40.7585, 17.5224], {icon: valle}).addTo(map).bindPopup('<b>Masseria Il Frantoio</b><br>Ostuni');
+    L.marker([40.7067, 17.5891], {icon: valle}).addTo(map).bindPopup('<b>Masseria Salinola</b><br>Ostuni');
+    L.marker([40.7091, 17.5036], {icon: valle}).addTo(map).bindPopup('<b>Masseria Cervarolo</b><br>Ostuni');
+    L.marker([40.7302, 17.5801], {icon: valle}).addTo(map).bindPopup('<b>Parco dei Principi</b><br>Ostuni');
+
+    // Lecce hotels
+    L.marker([40.3546, 18.1722], {icon: lecce}).addTo(map).bindPopup('<b>Patria Palace Hotel</b><br>Lecce');
+    L.marker([40.3524, 18.1716], {icon: lecce}).addTo(map).bindPopup('<b>Palazzo Zimara Boutique Hotel</b><br>Lecce');
+    L.marker([40.3502, 18.1718], {icon: lecce}).addTo(map).bindPopup('<b>Pollicastro Boutique Hotel</b><br>Lecce');
+    L.marker([40.3429, 18.1559], {icon: lecce}).addTo(map).bindPopup('<b>Chiostro dei Domenicani</b><br>Lecce');
+    L.marker([40.3526, 18.1716], {icon: lecce}).addTo(map).bindPopup('<b>Risorgimento Resort</b><br>Lecce');
+    L.marker([40.3525, 18.1692], {icon: lecce}).addTo(map).bindPopup('<b>Palazzo Rollo</b><br>Lecce');
+    L.marker([40.3609, 18.1686], {icon: lecce}).addTo(map).bindPopup('<b>Grand Hotel Tiziano</b><br>Lecce');
+    L.marker([40.3620, 18.1573], {icon: lecce}).addTo(map).bindPopup('<b>8Piuhotel</b><br>Lecce');
+    L.marker([40.3520, 18.1700], {icon: lecce}).addTo(map).bindPopup('<b>Suite 68</b><br>Lecce');
+
+    // Bari Airport hotels
+    L.marker([41.1419, 16.7619], {icon: airport}).addTo(map).bindPopup('<b>Parco dei Principi Hotel Congress &amp; Spa</b><br>Bari Palese');
+    L.marker([41.1538, 16.7714], {icon: airport}).addTo(map).bindPopup('<b>Vittoria Parc Hotel</b><br>Palese, Bari');
+    L.marker([41.1571, 16.7667], {icon: airport}).addTo(map).bindPopup('<b>Hotel La Baia</b><br>Palese, Bari');
+    L.marker([41.0990, 16.7986], {icon: airport}).addTo(map).bindPopup('<b>Best Western Hotel HR</b><br>Modugno, Bari');
+  </script>
 </body>
 </html>
